@@ -1,267 +1,171 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
-/* body */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    font-family: sans-serif;
-    background-color: #0d0d1a;
-    padding-top: 50px;
-    
+  font-family: sans-serif;
+  background-color: #0d0d1a;
+  margin: 0;
+  padding-top: 50px;
 }
 
-
-
-
-/* Cabeçalho */
-
+/* === HEADER === */
 header#cabecalho {
   color: aquamarine;
-  font-size: 10px;
-  
+  font-weight: bold;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  background-color: #0d0d1a;
+  border-bottom: 1px solid rgba(127,255,212,0.15);
+}
+header#cabecalho h1 { margin: 0; font-size: 18px; }
+
+/* === MENU DESKTOP (dentro do header) === */
+#menu-desktop {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+#menu-desktop a {
+  color: aquamarine;
+  text-decoration: none;
+  padding: 0 14px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+#menu-desktop a:hover {
+  background: rgba(127,255,212,0.08);
+  border-bottom: 2px solid aquamarine;
 }
 
-/* Menu */
+/* === HAMBURGUER (oculto no desktop) === */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+#menu-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: aquamarine;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+#menu-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#menu-toggle.ativo span:nth-child(2) { opacity: 0; }
+#menu-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-nav#menu li {
-    display: inline-block;
-    }
+/* === MENU MOBILE (oculto por padrão) === */
+#menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 50px; left: 0; right: 0;
+  background-color: #0d0d1a;
+  border-bottom: 1px solid rgba(127,255,212,0.2);
+  z-index: 998;
+}
+#menu-mobile.aberto { display: flex; }
+#menu-mobile a {
+  color: aquamarine;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(127,255,212,0.08);
+}
+#menu-mobile a:hover { background: rgba(127,255,212,0.06); }
 
-nav#menu ul{
-        list-style: none;
-        position: fixed;
-        top:   0px;
-        right: 100px;
-        border:2px solid rgba(255, 255, 255, 0.2) ;
-        padding-left: 0px;
-         z-index: 999;
-       }
+/* === HERO === */
+section#corpo { color: azure; margin: 100px 80px 60px; }
+section#corpo p { margin: 0; }
+section#corpo h1 { font-size: 50px; margin: 0; }
+section#corpo h2 { color: aquamarine; font-size: 32px; margin: 0; }
+section#corpo h3 { color: darkgray; font-size: 15px; margin: 0; }
+section#corpo img { width: 220px; border: 3px solid aquamarine; box-shadow: 0 0 20px aquamarine; }
+hgroup { display: flex; align-items: center; justify-content: space-around; gap: 40px; }
+div#botoes, .botoes-card { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+div#botoes a, .botoes-card a { border: 2px solid aquamarine; color: aquamarine; font-size: 15px; padding: 10px 20px; text-decoration: none; transition: background 0.2s; }
+div#botoes a:hover, .botoes-card a:hover { background: rgba(127,255,212,0.1); }
+div#botoes a.bt-Con, .botoes-card a.bt-Con { border-color: purple; color: purple; }
+div#botoes a.bt-Con:hover, .botoes-card a.bt-Con:hover { background: rgba(128,0,128,0.1); }
 
-    nav#menu li a {
-        color: aquamarine;
-        text-decoration: none;
-        padding: 5px 10px;
-    }
-    nav#menu li a:hover {
-        border-bottom: 2px solid aquamarine;
-    }
+/* === SOBRE === */
+section#sobre { color: darkgray; text-align: center; margin-top: 140px; padding: 0 20px; }
+section#sobre p { max-width: 800px; margin: 0 auto; line-height: 1.7; }
+section#sobre h2 { color: aquamarine; }
 
-    div#foto {
-    z-index: 1;
+/* === HABILIDADES === */
+section#habilidades { color: aquamarine; text-align: center; margin-top: 140px; padding: 0 20px; }
+section#habilidades img { width: 80px; margin-top: 20px; }
+section#habilidades figure { border: 2px solid rgba(134,173,173,0.2); border-radius: 10px; padding: 15px; width: 110px; margin: 0; }
+section#habilidades figcaption { margin-top: 8px; font-size: 13px; }
+section#habilidades #himg { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
+#himg figure:last-child img { filter: invert(1); }
+
+/* === PROJETOS === */
+section#projetos { color: aquamarine; text-align: center; margin-top: 140px; padding: 0 20px; }
+section#projetos h2 { margin-bottom: 30px; }
+section#projetos h3 { color: purple; }
+section#projetos p { color: darkgrey; }
+section#projetos #cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+section#projetos article { border: 2px solid rgba(134,173,173,0.2); border-radius: 10px; padding: 20px; width: 280px; text-align: left; }
+section#projetos article img { width: 100%; border-radius: 6px; display: block; }
+.badge { background-color: purple; color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-top: 10px; }
+
+/* === CONTATO === */
+section#contato { color: aquamarine; text-align: center; margin-top: 140px; margin-bottom: 80px; padding: 0 40px; }
+section#contato h2 { margin-bottom: 10px; }
+.contato-sub { color: darkgray; font-size: 15px; margin-top: 10px; margin-bottom: 40px; }
+#contato-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.contato-card { border: 2px solid rgba(127,255,212,0.2); border-radius: 10px; padding: 20px 40px; text-decoration: none; color: aquamarine; font-size: 15px; transition: border-color 0.25s, background 0.25s, transform 0.25s; }
+.contato-card:hover { border-color: aquamarine; background: rgba(127,255,212,0.06); transform: translateY(-4px); }
+
+/* === RODAPÉ === */
+footer#rodape { color: darkgray; text-align: center; padding: 30px 20px; border-top: 1px solid rgba(127,255,212,0.15); margin-top: 80px; font-size: 13px; }
+footer#rodape p { margin: 4px 0; }
+footer#rodape p:first-child { color: aquamarine; font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+
+/* === MOBILE ≤ 768px === */
+@media (max-width: 768px) {
+  #menu-desktop { display: none; }
+  #menu-toggle  { display: flex; }
+  hgroup { flex-direction: column-reverse; align-items: center; text-align: center; }
+  #texto { display: flex; flex-direction: column; align-items: center; }
+  section#corpo { margin: 60px 20px 40px; }
+  section#corpo h1 { font-size: 36px; }
+  section#corpo h2 { font-size: 22px; }
+  section#corpo img { width: 160px; margin-bottom: 20px; }
+  section#projetos article { width: calc(50% - 10px); min-width: 220px; }
+  section#sobre, section#habilidades, section#projetos, section#contato { margin-top: 100px; }
 }
 
- /* Corpo */
-
-    section#corpo {
-    color: azure;
-    margin: 100px;
-    }
-
-    section#corpo p {
-        margin: 0px;
-    }
-
-    section#corpo h1 {
-        font-size: 50px;
-    }
-
-    section#corpo h2 {
-        color: aquamarine;
-        font-size: 32px;
-        
-    }
- section#corpo h3 {
-        color: darkgray;
-        font-size: 15px;
-    }
-
-    section#corpo h1, h2, h3 {
-        margin: 0px;
-    }
-   section#corpo img {
-    width: 120px;
-    border: 3px solid aquamarine;
-box-shadow: 0px 0px 20px aquamarine;
-   
-    
+@media (max-width: 480px) {
+  section#corpo h1 { font-size: 28px; }
+  section#corpo h2 { font-size: 18px; }
+  section#corpo h3 { font-size: 13px; }
+  section#corpo img { width: 130px; }
+  div#botoes, .botoes-card { justify-content: center; }
+  div#botoes a, .botoes-card a { font-size: 13px; padding: 8px 16px; }
+  section#projetos article { width: 100%; max-width: 340px; }
+  .contato-card { width: 100%; max-width: 300px; padding: 16px 20px; }
+  #contato-links { flex-direction: column; align-items: center; }
+  section#habilidades figure { width: 90px; }
+  section#habilidades img { width: 60px; }
+  section#sobre, section#habilidades, section#projetos, section#contato { margin-top: 80px; padding: 0 16px; }
 }
-    hgroup {
-    display: flex;
-    justify-content: space-around;
-}
-div#botoes a{
-border: 2px solid aquamarine;
-color: aquamarine;
-font-size: 15px;
-padding: 10px 20px;
-text-decoration: none;
-
-}
-
-div#botoes a.bt-Con {
-    border: 2px solid purple;
-    color: purple;
-}
-div#botoes {
-    margin-top: 20px;
-}
-
-/* Sobre mim */
-
-section#sobre {
-    color: darkgray;
-    text-align: center;
-    margin-top: 210px;
-    
-}
-
-section#sobre p {
-    text-align: center;
-    max-width:800px ;
-    margin: 0 auto;
-    
-}
-section#sobre h2 {
-    color: aquamarine;
-}
-
-/* Habilidades */
-
-section#habilidades {
-    color: aquamarine;
-    text-align: center;
-    margin-top: 210px;
-}
-
-section#habilidades img {
-    width: 80px;
-    margin-top: 20px;  
-}
-
-section#habilidades figure {
-    border:2px solid rgba(134, 173, 173, 0.2) ;
-    border-radius: 10px;
-    padding: 15px;
-     width: 100px;
-}
-
-section#habilidades #himg {
-    display: flex ;
-    justify-content: center ;
-    margin-top: 20px;
-}
-#himg figure:last-child img {
-    filter: invert(1);
-}
-/* Projeto */
-
-section#projetos {
-    color: aquamarine;
-    text-align: center;
-    margin-top: 210px;
-}
-
-section#projetos h2 {
-    margin-bottom: 30px;
-}
-
-section#projetos img {
-    width: 400px;
-    margin-top: 20px; 
-    
-}
-
-section#projetos h3 {
-    color: purple;
-}
-
-section#projetos p {
-    color: darkgrey;
-}
-
-section#projetos #cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-section#projetos article {
-    width: 300px;
-}
-
-section#projetos img {
-    width: 100%;
-}
-
-section#projetos article {
-    border:2px solid rgba(134, 173, 173, 0.2) ;
-    border-radius: 10px;
-    padding: 20px;
-     width: 300px;
-}
-
-.badge {
-    background-color: purple;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-/* contato */
-
-section#contato {
-    color: aquamarine;
-    text-align: center;
-    margin-top: 210px;
-    margin-bottom: 80px;
-    padding: 0 40px;
-}
-
-section#contato h2 {
-    margin-bottom: 10px;
-}
-
-.contato-sub {
-    color: darkgray;
-    font-size: 15px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-}
-
-#contato-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.contato-card {
-    border: 2px solid rgba(127, 255, 212, 0.2);
-    border-radius: 10px;
-    padding: 20px 40px;
-    text-decoration: none;
-    color: aquamarine;
-    font-size: 15px;
-    transition: border-color 0.25s, background 0.25s, transform 0.25s;
-}
-
-.contato-card:hover {
-    border-color: aquamarine;
-    background: rgba(127, 255, 212, 0.06);
-    transform: translateY(-4px);
-}
-footer#rodape {
-    color: darkgray;
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(127, 255, 212, 0.15);
-    margin-top: 80px;
-    font-size: 13px;
-}
-
-footer#rodape p:first-child {
-    color: aquamarine;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
