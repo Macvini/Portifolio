@@ -1,4 +1,12 @@
-@charset "UTF-8";
+@charset "UTF-8"; 
+
+/* body */
+body {
+    font-family: sans-serif;
+    background-color: #0d0d1a;
+    padding-top: 50px;
+    
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -26,7 +34,7 @@ header#cabecalho {
 }
 header#cabecalho h1 { margin: 0; font-size: 18px; }
 
-/* === MENU DESKTOP (dentro do header) === */
+/* MENU DESKTOP*/
 #menu-desktop {
   display: flex;
   align-items: center;
@@ -48,7 +56,7 @@ header#cabecalho h1 { margin: 0; font-size: 18px; }
   border-bottom: 2px solid aquamarine;
 }
 
-/* === HAMBURGUER (oculto no desktop) === */
+/* HAMBURGUER (oculto no desktop) */
 #menu-toggle {
   display: none;
   flex-direction: column;
@@ -70,7 +78,7 @@ header#cabecalho h1 { margin: 0; font-size: 18px; }
 #menu-toggle.ativo span:nth-child(2) { opacity: 0; }
 #menu-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* === MENU MOBILE (oculto por padrão) === */
+/* MENU MOBILE*/
 #menu-mobile {
   display: none;
   flex-direction: column;
@@ -91,7 +99,7 @@ header#cabecalho h1 { margin: 0; font-size: 18px; }
 }
 #menu-mobile a:hover { background: rgba(127,255,212,0.06); }
 
-/* === HERO === */
+/* HERO */
 section#corpo { color: azure; margin: 100px 80px 60px; }
 section#corpo p { margin: 0; }
 section#corpo h1 { font-size: 50px; margin: 0; }
@@ -105,12 +113,12 @@ div#botoes a:hover, .botoes-card a:hover { background: rgba(127,255,212,0.1); }
 div#botoes a.bt-Con, .botoes-card a.bt-Con { border-color: purple; color: purple; }
 div#botoes a.bt-Con:hover, .botoes-card a.bt-Con:hover { background: rgba(128,0,128,0.1); }
 
-/* === SOBRE === */
+/* SOBRE */
 section#sobre { color: darkgray; text-align: center; margin-top: 140px; padding: 0 20px; }
 section#sobre p { max-width: 800px; margin: 0 auto; line-height: 1.7; }
 section#sobre h2 { color: aquamarine; }
 
-/* === HABILIDADES === */
+/* HABILIDADES*/
 section#habilidades { color: aquamarine; text-align: center; margin-top: 140px; padding: 0 20px; }
 section#habilidades img { width: 80px; margin-top: 20px; }
 section#habilidades figure { border: 2px solid rgba(134,173,173,0.2); border-radius: 10px; padding: 15px; width: 110px; margin: 0; }
@@ -118,7 +126,7 @@ section#habilidades figcaption { margin-top: 8px; font-size: 13px; }
 section#habilidades #himg { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
 #himg figure:last-child img { filter: invert(1); }
 
-/* === PROJETOS === */
+/* PROJETOS */
 section#projetos { color: aquamarine; text-align: center; margin-top: 140px; padding: 0 20px; }
 section#projetos h2 { margin-bottom: 30px; }
 section#projetos h3 { color: purple; }
@@ -128,7 +136,7 @@ section#projetos article { border: 2px solid rgba(134,173,173,0.2); border-radiu
 section#projetos article img { width: 100%; border-radius: 6px; display: block; }
 .badge { background-color: purple; color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-top: 10px; }
 
-/* === CONTATO === */
+/* CONTATO */
 section#contato { color: aquamarine; text-align: center; margin-top: 140px; margin-bottom: 80px; padding: 0 40px; }
 section#contato h2 { margin-bottom: 10px; }
 .contato-sub { color: darkgray; font-size: 15px; margin-top: 10px; margin-bottom: 40px; }
@@ -136,7 +144,7 @@ section#contato h2 { margin-bottom: 10px; }
 .contato-card { border: 2px solid rgba(127,255,212,0.2); border-radius: 10px; padding: 20px 40px; text-decoration: none; color: aquamarine; font-size: 15px; transition: border-color 0.25s, background 0.25s, transform 0.25s; }
 .contato-card:hover { border-color: aquamarine; background: rgba(127,255,212,0.06); transform: translateY(-4px); }
 
-/* === RODAPÉ === */
+/* RODAPÉ */
 footer#rodape { color: darkgray; text-align: center; padding: 30px 20px; border-top: 1px solid rgba(127,255,212,0.15); margin-top: 80px; font-size: 13px; }
 footer#rodape p { margin: 4px 0; }
 footer#rodape p:first-child { color: aquamarine; font-size: 16px; font-weight: bold; margin-bottom: 8px; }
@@ -169,3 +177,8 @@ footer#rodape p:first-child { color: aquamarine; font-size: 16px; font-weight: b
   section#habilidades img { width: 60px; }
   section#sobre, section#habilidades, section#projetos, section#contato { margin-top: 80px; padding: 0 16px; }
 }
+
+
+
+
+
